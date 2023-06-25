@@ -8,4 +8,10 @@
     html {
       @apply scroll-smooth;
     }
+    * {
+      scrollbar-width: none;
+    }
+    *::-webkit-scrollbar{
+      width: 0;
+    }
   }
