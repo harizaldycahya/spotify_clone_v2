@@ -3,6 +3,9 @@ import { useEffect, useState,useCallback } from "react"
 import {motion} from 'framer-motion'
 
 export default function Home() {
+  const animate = {
+    hover: {y:-8, opacity:1}
+  }
   return (
     <>
       <Head>
@@ -14,7 +17,7 @@ export default function Home() {
         <link href="./fontawesome/css/brands.css" rel="stylesheet"/>
         <link href="./fontawesome/css/solid.css" rel="stylesheet"/>
       </Head>
-      <motion.div whileHover={{backgroundColor:"#8888"}} className="m-auto grid gap-5 bg-black text-white">
+      <div className="m-auto grid gap-5 bg-black text-white">
           {/* SIDEBAR START */}
           <div className="sidebar hidden md:block w-[30%] lg:w-[23%] h-full fixed left-0 pl-2 py-2 2xl:pl-6 2xl:py-6">
             <div className='bg-neutral-900 p-4 2xl:p-10 rounded-xl'>
@@ -38,6 +41,7 @@ export default function Home() {
               </div>
               <div className="my-2 2xl:my-10"></div>
               <div className="pill mr-1 bg-gray-700 px-4 py-1 2xl:px-6 2xl:py-4 rounded-full inline-block text-xs lg:text-sm 2xl:text-3xl">Musik</div>
+              <div className="pill mr-1 bg-gray-700 px-4 py-1 2xl:px-6 2xl:py-4 rounded-full inline-block text-xs lg:text-sm 2xl:text-3xl">Podcast</div>
               <div className="my-2 2xl:my-10"></div>
               <div className="grid grid-cols-12">
                 <div className="col-span-2 opacity-70 p-1 text-center rounded-full hover:bg-black 2xl:text-3xl"> <i className='fa-solid fa-magnifying-glass'></i> </div>
@@ -48,21 +52,21 @@ export default function Home() {
                 <div className="my-2 2xl:my-6 col-span-12"></div>
                 <div className="item col-span-12 grid grid-cols-12 my-2 2xl:my-6">
                   <div className="col-span-3 self-center">
-                    <img className='w-full rounded-full' src="spotify (2).jpg" alt="" />
+                    <img className='w-full rounded-full' src="spotify (9).jpg" alt="" />
                   </div>
-                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Nama Band</span> <br /> <span className='opacity-70'>Artist</span></div>
+                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Taylor Swift</span> <br /> <span className='opacity-70'>Artist</span></div>
                 </div>
                 <div className="item col-span-12 grid grid-cols-12 my-2 2xl:my-6">
                   <div className="col-span-3 self-center">
-                    <img className='w-full rounded-full' src="spotify (2).jpg" alt="" />
+                    <img className='w-full rounded-full' src="spotify (10).jpg" alt="" />
                   </div>
-                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Nama Band</span> <br /> <span className='opacity-70'>Artist</span></div>
+                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Mahalini</span> <br /> <span className='opacity-70'>Artist</span></div>
                 </div>
                 <div className="item col-span-12 grid grid-cols-12 my-2 2xl:my-6">
                   <div className="col-span-3 self-center">
-                    <img className='w-full rounded-full' src="spotify (2).jpg" alt="" />
+                    <img className='w-full rounded-full' src="spotify (11).jpg" alt="" />
                   </div>
-                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Nama Band</span> <br /> <span className='opacity-70'>Artist</span></div>
+                  <div className="col-span-9 text-xs lg:text-sm 2xl:text-3xl px-5 self-center"> <span className='font-bold'>Tulus</span> <br /> <span className='opacity-70'>Artist</span></div>
                 </div>
               </div>
             </div>
@@ -113,7 +117,7 @@ export default function Home() {
           {/* MAIN START */}
           <div className='md:w-[70%] lg:w-[77%] main relative ml-auto p-2 2xl:p-6'>
             <div className='md:bg-neutral-900 min-h-screen rounded-lg grid gap-4' >
-                <div className="md:hidden px-5 py-2 text-white bg-gradient-to-t from-black via-[rgba(0,0,0,0.8)] to-transparent navbar fixed bottom-0 w-full grid grid-cols-12">
+                <div className="z-50 md:hidden px-5 py-2 text-white bg-gradient-to-t from-black via-[rgba(0,0,0,0.8)] to-transparent navbar fixed bottom-0 w-full grid grid-cols-12">
                   <div className="col-span-3">
                     <div className='text-center text-lg'> <i className="fa-solid fa-house"></i> </div>
                     <p className='text-center text-[.6rem]'>Home</p>
@@ -156,38 +160,186 @@ export default function Home() {
                   <i className='inline-block fa-solid fa-user-circle text-[22px] lg:text-[30px] 2xl:text-[70px] self-center '></i>
                 </div>
                 {/* CARDS */}
-                <h1 className="px-5 2xl:px-16 title font-semibold text-xl 2xl:text-5xl self-center">Podcast 100% bikin haha</h1>
+                <h1 className="px-5 2xl:px-16 title font-semibold text-xl 2xl:text-5xl self-center">Spotify Playlists</h1>
                 <div className="cards_container overflow-hidden m-auto w-full px-5 2xl:px-16 box-border">
                   <div className="box-border overflow-x-auto">
                     <div className="cards w-[36rem] lg:w-full 2xl:w-full lg:grid lg:grid-cols-12 lg:gap-5">
-                      <div className='card p-4 cursor-pointer bg-[rgb(30,30,30)] hover:bg-[rgb(40,40,40)] rounded-lg w-32 lg:w-full lg:col-span-3 inline-block mr-4'>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
                         <div className='w-full relative'>
-                          <img className='w-full shadow-2xl shadow-neutral-900 rounded-md' src="spotify (1).jpg" alt="" />
-                          {/* <div className='w-16 h-16 bg-green-400 position absolute right-0 bottom-0'></div> */}
-                          <div className='absolute hidden right-0 bottom-0 round_button w-6 h-6 leading-6 lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] xl:text-2xl bg-green-500 text-black text-center rounded-full'>
-                            <i className='fa-solid fa-play'></i>
-                          </div>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (1).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
                         </div>
-                        <div className="my-2"></div>
-                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Debat Anak Jaksel</p>
-                        <div className="my-2"></div>
-                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Podcast Raditya Dika</p>
-                      </div>
-                      <div className='card w-32 lg:w-full lg:col-span-3 inline-block mr-4'>
-                        <img className='w-full' src="spotify (1).jpg" alt="" />
-                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Debat Anak Jaksel</p>
-                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Podcast Raditya Dika</p>
-                      </div>
-                      <div className='card w-32 lg:w-full lg:col-span-3 inline-block mr-4'>
-                        <img className='w-full' src="spotify (1).jpg" alt="" />
-                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Debat Anak Jaksel</p>
-                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Podcast Raditya Dika</p>
-                      </div>
-                      <div className='card w-32 lg:w-full lg:col-span-3 inline-block mr-4'>
-                        <img className='w-full' src="spotify (1).jpg" alt="" />
-                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Debat Anak Jaksel</p>
-                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Podcast Raditya Dika</p>
-                      </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Today's Top Hits</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Metro Boomin is on top of the Hottest 50!</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (2).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Rock Classics</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Rock legends & epic songs</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (3).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>All Out 2010s</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>The Biggest songs of the 2010s</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (4).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Rap Caviar</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>New music from Young Thug and Coi</p>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+                <div className="pembatas my-2"></div>
+                {/* CARDS END */}
+                {/* CARDS */}
+                <h1 className="px-5 2xl:px-16 title font-semibold text-xl 2xl:text-5xl self-center">Focus</h1>
+                <div className="cards_container overflow-hidden m-auto w-full px-5 2xl:px-16 box-border">
+                  <div className="box-border overflow-x-auto">
+                    <div className="cards w-[36rem] lg:w-full 2xl:w-full lg:grid lg:grid-cols-12 lg:gap-5">
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (5).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Quite Moments</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Gentle classical music to help you relax</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (6).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Reading Adventure</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Scores and soundtracks fordari qeusts</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (7).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Focus Flow</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Uptempo instrumental hip hop beats</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (8).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Beats to think to</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>Focus with deep techno and tech house</p>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+                <div className="pembatas my-2"></div>
+                {/* CARDS END */}
+                {/* CARDS */}
+                <h1 className="px-5 2xl:px-16 title font-semibold text-xl 2xl:text-5xl self-center">Popular radio</h1>
+                <div className="cards_container overflow-hidden m-auto w-full px-5 2xl:px-16 box-border">
+                  <div className="box-border overflow-x-auto">
+                    <div className="cards w-[36rem] lg:w-full 2xl:w-full lg:grid lg:grid-cols-12 lg:gap-5">
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (9).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Taylor Swift Radio</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>By Spotify</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (10).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Mahalini Radio</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>By Spotify</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (11).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Sheila On 7 Radio</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>By Spotify</p>
+                      </motion.div>
+                      <motion.div whileHover="hover" className='card w-32 lg:w-full p-1 lg:p-4 xl:p-5 2xl:p-10 cursor-pointer bg-black lg:bg-[rgb(30,30,30)] lg:hover:bg-[rgb(40,40,40)] rounded-lg 2xl:rounded-2xl lg:col-span-3 inline-block mr-4'>
+                        <div className='w-full relative'>
+                          <img className='w-full shadow-lg shadow-neutral-900 rounded-md' src="spotify (12).jpg" alt="" />
+                          {/* <motion.div variants={animate} className='rounded-full opacity-0 w-[55px] h-[55px] bg-green-500 position absolute right-0 bottom-0'></motion.div> */}
+                          <motion.div variants={animate} className='absolute hidden lg:block opacity-0 right-2 bottom-2 round_button w-6 h-6 leading-6 lg:w-[35px] lg:h-[35px] lg:leading-[35px] xl:w-[55px] xl:h-[55px] xl:leading-[55px] 2xl:w-[120px] 2xl:h-[120px] 2xl:leading-[120px] xl:text-2xl 2xl:text-5xl bg-green-500 text-black text-center rounded-full'>
+                            <i className='ml-1 fa-solid fa-play'></i>
+                          </motion.div>
+                        </div>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl font-semibold mt-1'>Tulus Radio</p>
+                        <div className="my-2 xl:my-4 2xl:my-8"></div>
+                        <p className='text-xs lg:text-sm 2xl:text-3xl opacity-70 mt-1'>By Spotify</p>
+                      </motion.div>
                     </div>
                   </div>
                 </div>
@@ -202,30 +354,32 @@ export default function Home() {
                     <div className='opacity-70 py-1'>For the Record</div>
                   </div>
                   <div className="col-span-6 md:col-span-3 text-xs lg:text-sm 2xl:text-3xl">
-                    <div className='font-extrabold py-1'>Company</div>
-                    <div className='opacity-70 py-1'>About</div>
-                    <div className='opacity-70 py-1'>Jobs</div>
-                    <div className='opacity-70 py-1'>For the Record</div>
+                    <div className='font-extrabold py-1'>Communities</div>
+                    <div className='opacity-70 py-1'>For Artists</div>
+                    <div className='opacity-70 py-1'>Developers</div>
+                    <div className='opacity-70 py-1'>Advertising</div>
+                    <div className='opacity-70 py-1'>Investors</div>
+                    <div className='opacity-70 py-1'>Vendors</div>
+                    <div className='opacity-70 py-1'>Spotify for Work</div>
                   </div>
                   <div className="col-span-6 md:col-span-3 text-xs lg:text-sm 2xl:text-3xl">
-                    <div className='font-extrabold py-1'>Company</div>
-                    <div className='opacity-70 py-1'>About</div>
-                    <div className='opacity-70 py-1'>Jobs</div>
-                    <div className='opacity-70 py-1'>For the Record</div>
+                    <div className='font-extrabold py-1'>Useful Links</div>
+                    <div className='opacity-70 py-1'>Support</div>
+                    <div className='opacity-70 py-1'>Free Mobile App</div>
                   </div>
                   <div className="col-span-6 md:col-span-3 flex gap-2">
-                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-zinc-600 text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
+                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-[rgb(40,40,40)] text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
                       <i className='fa-brands fa-instagram'></i>
                     </div>
-                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-zinc-600 text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
+                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-[rgb(40,40,40)] text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
                       <i className='fa-brands fa-facebook'></i>
                     </div>
-                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-zinc-600 text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
+                    <div className=' round_button w-[25px] h-[25px] leading-[25px] lg:w-[30px] lg:h-[30px] lg:leading-[30px] xl:w-[40px] xl:h-[40px] xl:leading-[40px] 2xl:w-[60px] 2xl:h-[60px] 2xl:leading-[60px] bg-[rgb(40,40,40)] text-center text-xs lg:text-sm xl:text-lg 2xl:text-3xl rounded-full'>
                       <i className='fa-brands fa-twitter'></i>
                     </div>
                   </div>
                 </div>
-                <hr className='hidden md:block mx-5 2xl:mx-16 2xl:mt-10 2xl:mb-5 opacity-20' />
+                <hr className='hidden md:block mx-5 2xl:mx-16 lg:mt-8 xl:mt-10 2xl:mb-5 opacity-20' />
                 <div className="hidden md:grid copyright grid-cols-12 px-5 py-2 2xl:px-16 2xl:py-6">
                   <div className="col-span-8 self-center">
                     <div className="inline-block pr-2 lg:pr-4 text-[.6rem] lg:text-xs 2xl:text-3xl opacity-70 mr-auto">Legal</div>
@@ -243,6 +397,6 @@ export default function Home() {
           
           </div>
           {/* MAIN END */}
-      </motion.div>
+      </div>
     </>
 )}

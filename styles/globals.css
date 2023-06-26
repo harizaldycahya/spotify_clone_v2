@@ -4,8 +4,19 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer base {
+/* @layer base {
     html {
       @apply scroll-smooth;
     }
+  } */
+@layer base {
+  html {
+    @apply scroll-smooth;
   }
+  * {
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar{
+    width: 0;
+  }
+}
